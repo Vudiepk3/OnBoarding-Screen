@@ -7,10 +7,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 public class OnBoardingActivity extends AppCompatActivity {
-    private ViewPager2 viewPager;
+    private ViewPager viewPager;
     private TextView tv_skip,tv_next;
 
     private ImageView img_next;
@@ -24,7 +26,7 @@ public class OnBoardingActivity extends AppCompatActivity {
         tv_next = findViewById(R.id.tv_next);
         img_next = findViewById(R.id.img_next);
 
-        ViewPagerAdapter adapter = new ViewPagerAdapter(this);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
         viewPager.setAdapter(adapter);
 
         // Xu ly su kien nut Skip --> Chuyen sang MainActivity

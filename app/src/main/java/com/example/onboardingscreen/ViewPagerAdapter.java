@@ -3,7 +3,9 @@ package com.example.onboardingscreen;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager.adapter.FragmentStateAdapter;
+
 
 public class ViewPagerAdapter extends FragmentStateAdapter {
 
@@ -14,8 +16,8 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
             new OnBoarding3Fragment()
     };
 
-    public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
-        super(fragmentActivity);
+    public ViewPagerAdapter(@NonNull FragmentManager fragmentManager, int behavior) {
+        super(fragmentManager,behavior);
     }
 
     // Phương thức tạo Fragment tương ứng với vị trí (position) trong ViewPager2
